@@ -1,3 +1,4 @@
+
 # Project Name
 
 Brief description of your project here.
@@ -14,23 +15,26 @@ To set up the project environment, follow these steps:
 
 1. **Create a virtual environment:**
 
-python -m venv env
+    ```
+    python -m venv env
+    ```
 
 2. **Activate the virtual environment:**
 
-- On Windows:
-  ```
-  .\env\Scripts\activate
-  ```
-- On macOS and Linux:
-  ```
-  source env/bin/activate
-  ```
+    - On Windows:
+        ```
+        .\env\Scripts\activate
+        ```
+    - On macOS and Linux:
+        ```
+        source env/bin/activate
+        ```
 
 3. **Install the required packages:**
 
-pip install openai python-dotenv
-
+    ```
+    pip install openai python-dotenv
+    ```
 
 ## Configuring Environment Variables
 
@@ -40,21 +44,22 @@ To securely manage your application's configuration (e.g., API keys), you will u
 
 2. **Add your environment variables to the `.env` file.**
 
-For example, to set the OpenAI API key, add the following line to your `.env` file:
+    For example, to set the OpenAI API key, add the following line to your `.env` file:
 
-OPENAI_API_KEY=your_api_key_here
+    ```
+    OPENAI_API_KEY=your_api_key_here
+    ```
 
+    Replace `your_api_key_here` with your actual OpenAI API key.
 
-Replace `your_api_key_here` with your actual OpenAI API key.
+## Running the Application
 
-3. **Loading environment variables in your application**
+Once the virtual environment is activated and you're in the project directory, execute the script by running:
 
-At the beginning of your main script, add the following lines to load the environment variables:
+```
+python main.py
+```
 
-```python
-from dotenv import load_dotenv
-import os
+Enjoy!
 
-load_dotenv()  # Load environment variables from .env file.
-
-openai_api_key = os.getenv("OPENAI_API_KEY")
+---

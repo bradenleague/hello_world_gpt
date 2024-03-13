@@ -1,6 +1,9 @@
 import openai
+from dotenv import load_dotenv
 import os
 import datetime
+
+load_dotenv()  # Load environment variables from .env file.
 
 def initialize_openai_client():
     # Initializes the OpenAI client using the API key from environment variables.
@@ -15,7 +18,7 @@ def get_unique_hello_world(client):
     friendly_time = current_time.strftime("%I:%M %p").lstrip("0").replace(" 0", " ")
     date_str = current_time.strftime("%Y-%m-%d")
     
-    prompt = f"Given it's currently {friendly_time} on {date_str}, craft a unique 'Hello, World!' message, creatively incorporating the time and date."
+    prompt = f"Given it is currently {friendly_time} on {date_str}, craft a unique 'Hello, World!' message, creatively incorporating the time and date."
 
     response = client.chat.completions.create(
         model="gpt-3.5-turbo",
@@ -25,12 +28,7 @@ def get_unique_hello_world(client):
         ],
     )
 
-    try:
-        last_message = response.choices[0].message.content.strip()
-    except IndexError:
-        last_message = "Failed to generate a unique message."
-
-    return last_message
+    return response.choices[0].message.content.strip()
 
 def main():
     client = initialize_openai_client()
