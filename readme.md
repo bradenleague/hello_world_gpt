@@ -1,7 +1,9 @@
 
 # Project Name
 
-Brief description of your project here.
+Inspired by a talk I saw last year at GDC, I wanted to create a very simple boilerplate "Hello World" program that prompts the OpenAI ChatGPT model with the current time to return a "Hello, World!" message. This project was developed with the assistance of GitHub Copilot, and I release it under the MIT License, allowing for wide usage, modification, and distribution.
+
+Read more of my AI musings  [AI Curious](https://brae.page/personal/2024/02/26/AI-Curious.html)
 
 ## Prerequisites
 
@@ -61,5 +63,3 @@ python main.py
 ```
 
 Enjoy!
-
----
