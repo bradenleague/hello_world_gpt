@@ -47,8 +47,9 @@ def get_unique_hello_world(client):
     date_str = current_time.strftime("%Y-%m-%d")
     system_info = get_system_info()
     os_version = system_info['os_version']
+    machine = system_info['processor']
     
-    prompt = f"Given it is currently {friendly_time} on {date_str} and the OS version is {os_version}, craft a unique 'Hello, World!' message, creatively incorporating the time, date, and OS version."
+    prompt = f"Given it is currently {friendly_time} on {date_str} and the OS version is {os_version} on {machine}, craft a unique 'Hello, World!' message, creatively incorporating the time, date, and OS version."
 
     response = client.chat.completions.create(
         model="gpt-3.5-turbo",
